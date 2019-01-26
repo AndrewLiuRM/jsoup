@@ -46,9 +46,7 @@
           <excludes>
             <exclude>**/IT*.java</exclude>
           </excludes>
-		<systemPropertyVariables>
-		<argLine>-Xmx2048m -Xms1024m</argLine>
-		</systemPropertyVariables>
+	  <testFailureIgnore>true</testFailureIgnore>
         </configuration>
       </plugin>
       <plugin>
