@@ -32,6 +32,30 @@ public class CharacterReaderTest {
         assertTrue(r.isEmpty());
         assertEquals(CharacterReader.EOF, r.consume());
     }
+    
+    @Test public void current() {
+        CharacterReader r = new CharacterReader("one");
+        assertEquals('o', r.current());
+        r.consume();
+        assertEquals('n', r.current());
+        r.consume();
+        assertEquals('e', r.current());
+    }
+    
+    @Test public void pos() {
+        CharacterReader r = new CharacterReader("one");
+        assertEquals(0, r.pos());
+        assertEquals('o', r.consume());
+        assertEquals(1, r.pos());
+        assertEquals('n', r.consume());
+        assertEquals(2, r.pos());
+    }
+    
+    @Test public void posEmpty() {
+        CharacterReader r = new CharacterReader("");
+        assertEquals(0, r.pos());
+    }
+    
 
     @Test public void unconsume() {
         CharacterReader r = new CharacterReader("one");

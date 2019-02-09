@@ -13,12 +13,31 @@ import static org.junit.Assert.*;
 public class TagTest {
     @Rule public MultiLocaleRule rule = new MultiLocaleRule();
 
+
+    
     @Test public void isCaseSensitive() {
         Tag p1 = Tag.valueOf("P");
         Tag p2 = Tag.valueOf("p");
         assertFalse(p1.equals(p2));
     }
 
+    @Test public void toStringTest() {
+		Tag p1 = Tag.valueOf("P");
+		assertEquals(p1.toString(), "P");
+    }
+    
+    @Test public void testHashCode() {
+        Tag p1 = Tag.valueOf("p");
+        Tag p2 = Tag.valueOf("p");
+        assertEquals(p1.hashCode(), p2.hashCode());
+    }
+    
+    @Test public void testEquals() {
+        Tag p1 = Tag.valueOf("p");
+        Tag p2 = Tag.valueOf("p");
+        assertEquals(p1, p2);
+    }
+    
     @Test @MultiLocaleTest public void canBeInsensitive() {
         Tag script1 = Tag.valueOf("script", ParseSettings.htmlDefault);
         Tag script2 = Tag.valueOf("SCRIPT", ParseSettings.htmlDefault);

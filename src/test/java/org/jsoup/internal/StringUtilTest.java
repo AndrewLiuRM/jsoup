@@ -67,6 +67,18 @@ public class StringUtilTest {
         assertFalse(StringUtil.isWhitespace('\u2000'));
         assertFalse(StringUtil.isWhitespace('\u3000'));
     }
+    
+    @Test public void inSorted() {
+        assertTrue(StringUtil.inSorted("a", new String[] {
+        		"a", "b"
+        }));
+    }
+    
+    @Test public void in() {
+        assertTrue(StringUtil.in("a", new String[] {
+        		"b", "a"
+        }));
+    }
 
     @Test public void normaliseWhiteSpace() {
         assertEquals(" ", normaliseWhitespace("    \r \n \r\n"));
