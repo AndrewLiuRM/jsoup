@@ -77,6 +77,23 @@
         </executions>
       </plugin>
       <plugin>
+            <groupId>randoop</groupId>
+            <artifactId>randoop-maven-plugin</artifactId>
+            <version>3.1.5</version>
+            <configuration>
+                <packageName>my.base.package</packageName>
+            </configuration>
+            <executions>
+                <execution>
+                    <id>generate-tests</id>
+                    <goals>
+                        <goal>gentests</goal>
+                    </goals>
+                    <phase>generate-test-sources</phase>
+                </execution>
+            </executions>
+        </plugin>
+      <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>0.8.3</version>
@@ -274,23 +291,7 @@
         <artifactId>maven-release-plugin</artifactId>
         <version>2.5.3</version>
       </plugin>
-        <plugin>
-            <groupId>randoop</groupId>
-            <artifactId>randoop-maven-plugin</artifactId>
-            <version>3.1.5</version>
-            <configuration>
-                <packageName>my.base.package</packageName>
-            </configuration>
-            <executions>
-                <execution>
-                    <id>generate-tests</id>
-                    <goals>
-                        <goal>gentests</goal>
-                    </goals>
-                    <phase>generate-test-sources</phase>
-                </execution>
-            </executions>
-        </plugin>
+      
     </plugins>
     <resources>
       <resource>
