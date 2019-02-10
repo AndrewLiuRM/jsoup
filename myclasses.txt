@@ -1,0 +1,14 @@
+org.jsoup.Connection
+org.jsoup.HttpStatusException
+org.jsoup.Jsoup
+org.jsoup.SerializationException
+org.jsoup.UncheckedIOException
+org.jsoup.UnsupportedMimeTypeException
+org.jsoup.helper.ChangeNotifyingArrayList
+org.jsoup.helper.DataUtil
+org.jsoup.helper.HttpConnection
+org.jsoup.helper.Validate
+org.jsoup.helper.W3CDom
+org.jsoup.internal.ConstrainableInputStream
+org.jsoup.internal.Normalizer
+org.jsoup.internal.StringUtil
